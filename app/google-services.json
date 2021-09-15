@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "802634004600",
+    "project_id": "beer-friends-bc763",
+    "storage_bucket": "beer-friends-bc763.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802634004600:android:85438979ab3fa52aa5d58d",
+        "android_client_info": {
+          "package_name": "br.com.beerfriends"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802634004600-ckpk839g9veoeoab1g7r6q0fccvqfbfh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.beerfriends",
+            "certificate_hash": "a1fa333851eba51d7a8c27ca7e1b79f5e33002cb"
+          }
+        },
+        {
+          "client_id": "802634004600-m809pc9qpo3nijckf5f9vbstmlrcgsnr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj94lzcxR1grSOSktsLo126dE5b4M2aj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802634004600-m809pc9qpo3nijckf5f9vbstmlrcgsnr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
