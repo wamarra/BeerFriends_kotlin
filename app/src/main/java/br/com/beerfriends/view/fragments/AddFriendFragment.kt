@@ -1,4 +1,4 @@
-package br.com.beerfriends.ui.gallery
+package br.com.beerfriends.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import br.com.beerfriends.R
-import br.com.beerfriends.databinding.FragmentGalleryBinding
+import br.com.beerfriends.databinding.FragmentAddFriendBinding
+import br.com.beerfriends.viewmodel.AddFriendViewModel
 
-class GalleryFragment : Fragment() {
+class AddFriendFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
-    private var _binding: FragmentGalleryBinding? = null
+    private lateinit var addFriendViewModel: AddFriendViewModel
+    private var _binding: FragmentAddFriendBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,14 +25,14 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+        addFriendViewModel =
+            ViewModelProvider(this).get(AddFriendViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentAddFriendBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        val textView: TextView = binding.textAddFriend
+        addFriendViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

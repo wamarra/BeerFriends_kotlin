@@ -1,4 +1,4 @@
-package br.com.beerfriends.ui.home
+package br.com.beerfriends.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import br.com.beerfriends.R
-import br.com.beerfriends.databinding.FragmentHomeBinding
+import br.com.beerfriends.databinding.FragmentFriendListBinding
+import br.com.beerfriends.viewmodel.FriendListViewModel
 
-class HomeFragment : Fragment() {
+class FriendListFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var friendListViewModel: FriendListViewModel
+    private var _binding: FragmentFriendListBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,14 +25,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        friendListViewModel =
+            ViewModelProvider(this).get(FriendListViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentFriendListBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        val textView: TextView = binding.textFriendList
+        friendListViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

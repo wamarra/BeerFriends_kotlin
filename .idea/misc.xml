@@ -8,16 +8,22 @@
         <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.228125" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.228125" />
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.228125" />
+        <entry key="app/src/main/res/drawable/onboarding.xml" value="0.228125" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.228125" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.17097264437689969" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.17097264437689969" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.17097264437689969" />
+        <entry key="app/src/main/res/layout/fragment_add_friend.xml" value="0.21197916666666666" />
+        <entry key="app/src/main/res/layout/fragment_friend_list.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/onboarding.xml" value="0.21197916666666666" />
+        <entry key="app/src/main/res/layout/onboarding_page.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.22" />
         <entry key="app/src/main/res/menu/main.xml" value="0.21197916666666666" />
       </map>

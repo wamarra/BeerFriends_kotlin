@@ -1,13 +1,13 @@
-package br.com.beerfriends.ui.home
+package br.com.beerfriends.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class AddFriendViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "Adicionar Amigo"
     }
     val text: LiveData<String> = _text
 }
