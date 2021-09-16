@@ -10,4 +10,10 @@
     <string name="menu_friends">Lista de Amigos</string>
     <string name="menu_profile">Editar Perfil</string>
     <string name="menu_add_friend">Adicionar Amigo</string>
+    <string name="title_add_friend">Adicionar Amigo</string>
+    <string name="username_hint">Nome Completo</string>
+    <string name="email_hint">E-email</string>
+    <string name="phone_hint">Telefone</string>
+    <string name="website_hint">Site</string>
+    <string name="save_button">Salvar</string>
 </resources>

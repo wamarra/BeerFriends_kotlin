@@ -31,10 +31,10 @@ class AddFriendFragment : Fragment() {
         _binding = FragmentAddFriendBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textAddFriend
+        /*val textView: TextView = binding.textAddFriend
         addFriendViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
-        })
+        })*/
         return root
     }
 
