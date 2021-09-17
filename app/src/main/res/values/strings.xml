@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BeerFriends</string>
+    <string name="app_name">Beer Friends</string>
     <string name="navigation_drawer_open">Abre o menu lateral</string>
     <string name="navigation_drawer_close">Fecha o meu lateral</string>
     <string name="nav_header_title">Fulano da Silva</string>
@@ -10,7 +10,7 @@
     <string name="menu_friends">Lista de Amigos</string>
     <string name="menu_profile">Editar Perfil</string>
     <string name="menu_add_friend">Adicionar Amigo</string>
-    <string name="title_add_friend">Adicionar Amigo</string>
+    <string name="title_add_friend">Informações do Amigo</string>
     <string name="username_hint">Nome Completo</string>
     <string name="email_hint">E-email</string>
     <string name="phone_hint">Telefone</string>

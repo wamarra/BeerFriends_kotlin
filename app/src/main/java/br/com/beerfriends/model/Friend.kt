@@ -11,14 +11,14 @@ data class Friend(
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "name")
-    @SerializedName("name") val name: String = "",
+    @SerializedName("name") var name: String = "",
 
     @ColumnInfo(name = "email")
-    @SerializedName("email") val email: String = "",
+    @SerializedName("email") var email: String = "",
 
     @ColumnInfo(name = "phone")
-    @SerializedName("phone") val phone: String = "",
+    @SerializedName("phone") var phone: String = "",
 
     @ColumnInfo(name = "website")
-    @SerializedName("website") val website: String = ""
+    @SerializedName("website") var website: String = ""
 )

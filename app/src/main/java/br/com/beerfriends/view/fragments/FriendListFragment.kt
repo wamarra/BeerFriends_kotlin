@@ -18,9 +18,6 @@ class FriendListFragment : Fragment() {
     private lateinit var friendListViewModel: FriendListViewModel
     private var _binding: FragmentFriendListBinding? = null
     private val friendAdapter = FriendAdapter(arrayListOf())
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -28,13 +25,12 @@ class FriendListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        /*friendListViewModel =
-            ViewModelProvider(this).get(FriendListViewModel::class.java)*/
 
         friendListViewModel = ViewModelProvider(this, FriendListViewModel.FriendListViewModelFactory(
             FriendRepository())).get(FriendListViewModel::class.java)
 
         _binding = FragmentFriendListBinding.inflate(inflater, container, false)
+
         val root: View = binding.root
 
         binding.friends.apply {
@@ -56,10 +52,6 @@ class FriendListFragment : Fragment() {
             }
         }
 
-        /*val textView: TextView = binding.userName
-        friendListViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })*/
         return root
     }
 

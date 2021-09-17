@@ -12,11 +12,6 @@ class FriendListViewModel(private val repository: FriendRepository) : ViewModel(
     val items = repository.getFriends()
     val requestError = MutableLiveData<EventWrapper<String>>()
 
-    /*private val _text = MutableLiveData<String>().apply {
-        value = "Lista de amigos"
-    }
-    val text: LiveData<String> = _text*/
-
     fun refreshFriends() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
@@ -41,6 +36,5 @@ class FriendListViewModel(private val repository: FriendRepository) : ViewModel(
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             return FriendListViewModel(repository) as T
         }
-
     }
 }
