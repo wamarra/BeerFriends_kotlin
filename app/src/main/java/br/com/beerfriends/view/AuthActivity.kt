@@ -13,6 +13,7 @@ import br.com.beerfriends.model.AuthRepository
 import br.com.beerfriends.model.User
 import br.com.beerfriends.viewmodel.AuthViewModel
 import br.com.beerfriends.R
+import br.com.beerfriends.model.UserRepository
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -31,8 +32,10 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_auth)
-        authViewModel = ViewModelProvider(this, AuthViewModel.AuthViewModelFactory(AuthRepository()))
-            .get(AuthViewModel::class.java)
+        
+        authViewModel = ViewModelProvider(this,
+            AuthViewModel.AuthViewModelFactory(AuthRepository(), UserRepository())).get(AuthViewModel::class.java)
+
         initRegistersAndObservers()
     }
 
@@ -55,6 +58,14 @@ class AuthActivity : AppCompatActivity() {
                 authViewModel.createUser(user)
             } else {
                 goToMainActivity(user)
+            }
+
+            val sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE)
+            with(sharedPreferences.edit()) {
+                putString("uid", user.uid)
+                putString("name", user.name)
+                putString("email", user.email)
+                commit()
             }
         }
 

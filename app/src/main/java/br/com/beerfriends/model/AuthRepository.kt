@@ -14,7 +14,7 @@ class AuthRepository {
                 val isNewUser = authTask.result.additionalUserInfo?.isNewUser
                 val currentUser = firebaseAuth.currentUser
                 currentUser?.let {
-                    authenticatedUserLiveData.value = User(currentUser.uid, currentUser.displayName, currentUser.email, isNewUser?: false)
+                    authenticatedUserLiveData.value = User(currentUser.uid, currentUser.displayName!!, currentUser.email!!, isNewUser?: false)
                 }
             }
         }

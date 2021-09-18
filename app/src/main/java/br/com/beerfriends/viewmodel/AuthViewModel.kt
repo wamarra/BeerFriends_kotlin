@@ -6,9 +6,11 @@ import androidx.lifecycle.ViewModelProvider
 import br.com.beerfriends.model.AuthRepository
 import br.com.beerfriends.model.EventWrapper
 import br.com.beerfriends.model.User
+import br.com.beerfriends.model.UserRepository
 import com.google.firebase.auth.AuthCredential
 
-class AuthViewModel(private val authRepository: AuthRepository) : ViewModel() {
+class AuthViewModel(private val authRepository: AuthRepository,
+                    private val userRepository: UserRepository) : ViewModel() {
     enum class SignInType(val type: String) {
         Google("Google"),
         Facebook("Facebook"),
@@ -28,11 +30,15 @@ class AuthViewModel(private val authRepository: AuthRepository) : ViewModel() {
 
     fun createUser(user: User) {
         authRepository.createUserInFirestoreIfNotExists(user, createdUserLiveData)
+        if (userRepository.getUserByUid(user.uid) == null) {
+            userRepository.saveUser(user)
+        }
     }
 
-    class AuthViewModelFactory(private val authRepository: AuthRepository): ViewModelProvider.Factory {
+    class AuthViewModelFactory(private val authRepository: AuthRepository,
+                               private val userRepository: UserRepository): ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return AuthViewModel(authRepository) as T
+            return AuthViewModel(authRepository, userRepository) as T
         }
     }
 }

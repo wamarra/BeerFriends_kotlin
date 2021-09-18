@@ -1,13 +1,30 @@
 package br.com.beerfriends.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import br.com.beerfriends.model.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class ProfileEditViewModel : ViewModel() {
+class ProfileEditViewModel(private val repository: UserRepository, private val uid: String?)  : ViewModel() {
+    private val requestError = MutableLiveData<EventWrapper<String>>()
+    val user =  repository.getUserByUid(uid!!)
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "Editar Perfil"
+    fun saveUser(user: User) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                repository.saveUser(user)
+            } catch (error: Exception) {
+                withContext(Dispatchers.Main) {
+                    requestError.value = EventWrapper("Erro ao salvar o usuário")
+                }
+            }
+        }
     }
-    val text: LiveData<String> = _text
+
+    class ProfileEditViewModelFactory(private val repository: UserRepository, private val uid: String?) : ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return ProfileEditViewModel(repository, uid) as T
+        }
+    }
 }

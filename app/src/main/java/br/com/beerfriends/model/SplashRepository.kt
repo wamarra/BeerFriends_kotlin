@@ -10,7 +10,7 @@ class SplashRepository {
         if (firebaseUser == null) {
             isUserAuthenticatedLiveData.value = null
         } else {
-            isUserAuthenticatedLiveData.value = User(firebaseUser.uid, firebaseUser.displayName, firebaseUser.email)
+            isUserAuthenticatedLiveData.value = User(firebaseUser.uid, firebaseUser.displayName!!, firebaseUser.email!!)
         }
     }
 }

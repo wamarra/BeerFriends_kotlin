@@ -16,4 +16,7 @@
     <string name="phone_hint">Telefone</string>
     <string name="website_hint">Site</string>
     <string name="save_button">Salvar</string>
+    <string name="title_profile">Informações do Usuário</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>
