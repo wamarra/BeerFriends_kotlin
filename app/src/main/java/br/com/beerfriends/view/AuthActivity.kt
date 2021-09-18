@@ -13,6 +13,7 @@ import br.com.beerfriends.model.AuthRepository
 import br.com.beerfriends.model.User
 import br.com.beerfriends.viewmodel.AuthViewModel
 import br.com.beerfriends.R
+import br.com.beerfriends.config.AppPrefs
 import br.com.beerfriends.model.UserRepository
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -30,6 +31,11 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
+
+        if (AppPrefs(this).isFirstTimeLaunch()) {
+            startActivity(Intent(this, OnBoardingActivity::class.java))
+            finish()
+        }
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_auth)
         

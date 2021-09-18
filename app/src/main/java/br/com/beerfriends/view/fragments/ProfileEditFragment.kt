@@ -57,7 +57,7 @@ class ProfileEditFragment : Fragment() {
                 commit()
             }
 
-            Snackbar.make(root, "Profile alterado com sucesso", Snackbar.LENGTH_LONG)
+            Snackbar.make(root, "Perfil alterado com sucesso", Snackbar.LENGTH_LONG)
                 .setAction("Sucesso", null).show()
         }
         return root
