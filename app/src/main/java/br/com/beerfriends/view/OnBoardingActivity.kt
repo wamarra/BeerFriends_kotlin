@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.text.HtmlCompat
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import kotlinx.android.synthetic.main.activity_onboarding.*
 import br.com.beerfriends.R
@@ -98,7 +99,7 @@ class OnBoardingActivity : AppCompatActivity() {
         dotsLayout.removeAllViews()
         for (i in dots!!.indices) {
             dots!![i] = TextView(this)
-            dots!![i]?.text = Html.fromHtml("&#8226;")
+            dots!![i]?.text = HtmlCompat.fromHtml( "&#8226;", HtmlCompat.FROM_HTML_MODE_LEGACY)
             dots!![i]?.textSize = 35f
             dots!![i]?.setTextColor(ContextCompat.getColor(this, R.color.secondary))
             dotsLayout.addView(dots!![i])
